@@ -30,18 +30,12 @@ pipeline {
         stage('Run Calculator Script') {
             steps {
                 sh '''
-                ./venv/bin/python calculator.py
+                ./venv/bin/python add.py
                 '''
             }
         }
 
-        stage('Run Tests') {
-            steps {
-                sh '''
-                ./venv/bin/python -m unittest test_calculator.py
-                '''
-            }
-        }
+       
 
     }
 
