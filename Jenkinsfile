@@ -6,7 +6,7 @@ pipeline {
         stage('Clone Repository') {
             steps {
                 git branch: 'main',
-                url: 'https://github.com/Jainandan-728/python.git'
+                url: 'https://github.com/Jainandan-728/calculator2.git'
             }
         }
 
@@ -27,15 +27,21 @@ pipeline {
             }
         }
 
-        stage('Run add Script') {
+        stage('Run Calculator Script') {
             steps {
                 sh '''
-                ./venv/bin/python add.py
+                ./venv/bin/python calculator.py
                 '''
             }
         }
 
-       
+        stage('Run Tests') {
+            steps {
+                sh '''
+                ./venv/bin/python -m unittest test_calculator.py
+                '''
+            }
+        }
 
     }
 
