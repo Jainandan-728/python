@@ -27,7 +27,7 @@ pipeline {
             }
         }
 
-        stage('Run Calculator Script') {
+        stage('Run add Script') {
             steps {
                 sh '''
                 ./venv/bin/python add.py
